@@ -1,0 +1,6 @@
+*.elc
+*~
+*.bak
+/auto-save-list
+/elpa
+/url

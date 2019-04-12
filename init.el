@@ -104,6 +104,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (global-undo-tree-mode 1)
 ;;(evil-mode 1)
 

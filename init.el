@@ -107,8 +107,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (global-undo-tree-mode 1)
 ;;(evil-mode 1)
-(global-set-key "\C-c+" 'apply-operation-to-number-at-point)
-(global-set-key "\C-c-" 'apply-operation-to-number-at-point)
+(require 'evil-numbers)
+(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; cc-mode
@@ -189,7 +190,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (operate-on-number markdown-mode undo-tree evil))))
+ '(package-selected-packages (quote (evil-numbers markdown-mode undo-tree evil))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

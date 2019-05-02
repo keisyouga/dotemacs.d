@@ -72,7 +72,7 @@
 ;;(ido-mode t)
 ;;(icomplete-mode)
 (setq read-buffer-completion-ignore-case t)
-(setq completion-cycle-threshold 5)
+(setq completion-cycle-threshold t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; etc...

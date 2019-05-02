@@ -27,11 +27,17 @@
 (global-set-key (kbd "<f5>") 'keyboard-escape-quit)
 (global-set-key (kbd "<f6>") 'other-window)
 (global-set-key (kbd "<f7>") 'switch-to-buffer)
-(global-set-key (kbd "<f8>") 'list-buffers)
+(global-set-key (kbd "<f8>") 'goto-scratch)
 (global-set-key (kbd "<f9>") 'next-error)
 (global-set-key (kbd "<S-f9>") 'previous-error)
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; goto scratch
+(defun goto-scratch (&optional pop)
+  (interactive "P")
+  (if pop
+      (pop-to-buffer "*scratch*")
+    (switch-to-buffer "*scratch*")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mouse

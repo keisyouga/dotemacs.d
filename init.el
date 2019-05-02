@@ -185,6 +185,27 @@
     (quit-windows-on "*head*")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; pinyin
+(require 'pinyin)
+(defun echo-pinyin-point ()
+  (interactive)
+  (let ((lst
+	 (when (< (point) (point-max))
+	   (pinyin
+	    (string-to-char (buffer-substring-no-properties (point) (1+ (point))))
+	    'TONE3))))
+    (when lst (message "%s" lst))))
+
+(define-minor-mode echo-pinyin-mode
+  "display pinyin at cursor position in echo area"
+  :init-value nil
+  :lighter " Echo-Pinyin"
+  (if echo-pinyin-mode
+      (add-hook 'post-command-hook #'echo-pinyin-point nil t)
+    (remove-hook 'post-command-hook #'echo-pinyin-point t)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; enable disabled command
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)

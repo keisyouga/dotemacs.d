@@ -204,6 +204,16 @@
     (remove-hook 'post-command-hook #'echo-pinyin-point t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; mark symbol
+(defun mark-symbol ()
+  (interactive)
+  (let ((bounds (find-tag-default-bounds)))
+	(when bounds
+	  (push-mark (car bounds) nil t)
+	  (goto-char (cdr bounds)))))
+(global-set-key "\C-cs" 'mark-symbol)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; enable disabled command
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)

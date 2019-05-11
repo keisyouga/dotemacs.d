@@ -120,8 +120,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; cc-mode
 (setq c-default-style '((java-mode . "java")
-                        (awk-mode . "awk")
-                        (other . "linux")))
+			(awk-mode . "awk")
+			(other . "linux")))
 
 (defun my-c-mode-common-hook ()
   (setq show-trailing-whitespace t))
@@ -130,23 +130,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired-x
 (add-hook 'dired-load-hook
-          (lambda ()
-            (load "dired-x")
-            ;; Set dired-x global variables here.  For example:
-            ;; (setq dired-guess-shell-gnutar "gtar")
-            ;; (setq dired-x-hands-off-my-keys nil)
+	  (lambda ()
+	    (load "dired-x")
+	    ;; Set dired-x global variables here.  For example:
+	    ;; (setq dired-guess-shell-gnutar "gtar")
+	    ;; (setq dired-x-hands-off-my-keys nil)
 	    (advice-add 'dired-next-line :after #'dired-head-file-function)
 	    ;;(advice-remove 'dired-next-line #'dired-head-file-function)
 	    (define-key dired-mode-map "b" 'dired-toggle-head-file)
-            ))
+	    ))
 (add-hook 'dired-mode-hook
-          (lambda ()
-            ;; Set dired-x buffer-local variables here.  For example:
+	  (lambda ()
+	    ;; Set dired-x buffer-local variables here.  For example:
 	    ;; (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$")
 	    (setq dired-omit-files "^\\.")
-            ;; (dired-omit-mode 1)
+	    ;; (dired-omit-mode 1)
 	    (setq dired-dwim-target t)
-            ))
+	    ))
 
 ;; display head of file
 (defvar dired-head-file nil
@@ -208,9 +208,9 @@
 (defun mark-symbol ()
   (interactive)
   (let ((bounds (find-tag-default-bounds)))
-	(when bounds
-	  (push-mark (car bounds) nil t)
-	  (goto-char (cdr bounds)))))
+    (when bounds
+      (push-mark (car bounds) nil t)
+      (goto-char (cdr bounds)))))
 (global-set-key "\C-cs" 'mark-symbol)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

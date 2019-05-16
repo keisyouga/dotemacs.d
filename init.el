@@ -186,9 +186,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; echo pinyin
-(require 'pinyin)
 (defun echo-pinyin-point ()
   (interactive)
+  (require 'pinyin)
   (let ((lst (pinyin
 	      (string-to-char (buffer-substring-no-properties
 			       (point) (1+ (point))))

@@ -158,21 +158,21 @@
 (defun dired-head-file-function (&rest args)
   "display head of file."
   (if dired-head-file
-      (let ((buffer-name "*head*")
-	    (filename (dired-get-filename)))
-	(let ((buffer (get-buffer-create buffer-name)))
-	  (with-current-buffer buffer
-	    (setq buffer-read-only nil)
-	    (erase-buffer)
-	    (if (file-directory-p filename)
-		;; list directory
-		(insert-directory filename "-a" nil t)
-	      ;; head of file content
-	      (insert-file-contents filename nil 0 dired-head-file-byte))
-	    (goto-char (point-min))
-	    (view-mode)
-	    (display-buffer buffer)
-	    )))))
+      (let ((filename (dired-get-filename))
+	    (buffer (get-buffer-create "*head*")))
+	(with-current-buffer buffer
+	  (setq buffer-read-only nil)
+	  (erase-buffer)
+	  (if (file-directory-p filename)
+	      ;; list directory
+	      (insert-directory filename "-a" nil t)
+	    ;; insert head of file content if file size is greater than 0
+	    (if (< 0 (nth 7 (file-attributes filename)))
+		(insert-file-contents filename nil 0 dired-head-file-byte)))
+	  (goto-char (point-min))
+	  (view-mode)
+	  (display-buffer buffer)
+	  ))))
 
 (defun dired-toggle-head-file (&optional arg)
   (interactive "P")

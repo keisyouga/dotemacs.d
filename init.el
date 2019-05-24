@@ -40,6 +40,17 @@
     (switch-to-buffer "*scratch*")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; show minibuffer history
+(defun show-minibuffer-history ()
+  "show current minibuffer history in buffer `*minibuffer history*'."
+  (interactive)
+  (let ((buffer (get-buffer-create "*minibuffer history*")))
+	(with-current-buffer buffer
+	  (erase-buffer)
+	  (mapc (lambda (x) (insert (format "%s\n" x))) (symbol-value minibuffer-history-variable)))
+	(display-buffer buffer)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mouse
 (when (not (window-system))
   (xterm-mouse-mode 1)

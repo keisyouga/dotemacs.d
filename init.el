@@ -91,6 +91,7 @@
 (setq view-read-only t)
 (setq grep-save-buffers nil)
 (setq compilation-window-height 10)
+(setq delete-active-region nil)
 
 ;; https://www.emacswiki.org/emacs/IndentingC
 (setq-default c-basic-offset 4

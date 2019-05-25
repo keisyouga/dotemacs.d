@@ -4,3 +4,7 @@
 /auto-save-list
 /elpa
 /url
+/.emacs.desktop
+/.emacs.desktop.lock
+/ac-comphist.dat
+/my-custom.el

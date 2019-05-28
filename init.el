@@ -14,22 +14,18 @@
 ;; M-C-/
 (define-key esc-map [?\C-_] 'dabbrev-completion)
 
-;; function key map
-(global-set-key (kbd "<f2>") 'find-file)
-(define-key global-map (kbd "<f3>") 'isearch-forward)
-(define-key isearch-mode-map (kbd "<f3>") 'isearch-repeat-forward)
-(define-key minibuffer-local-isearch-map (kbd "<f3>") 'isearch-forward-exit-minibuffer)
-(define-key global-map (kbd "<S-f3>") 'isearch-backward)
-(define-key isearch-mode-map (kbd "<S-f3>") 'isearch-repeat-backward)
-(define-key minibuffer-local-isearch-map (kbd "<S-f3>") 'isearch-reverse-exit-minibuffer)
-(global-set-key (kbd "<f4>") 'undo-tree-undo)
-(global-set-key (kbd "<S-f4>") 'undo-tree-redo)
+;; global key map
+;; (define-key global-map (kbd "<f3>") 'isearch-forward)
+;; (define-key isearch-mode-map (kbd "<f3>") 'isearch-repeat-forward)
+;; (define-key minibuffer-local-isearch-map (kbd "<f3>") 'isearch-forward-exit-minibuffer)
+;; (define-key global-map (kbd "<S-f3>") 'isearch-backward)
+;; (define-key isearch-mode-map (kbd "<S-f3>") 'isearch-repeat-backward)
+;; (define-key minibuffer-local-isearch-map (kbd "<S-f3>") 'isearch-reverse-exit-minibuffer)
 (global-set-key (kbd "<f5>") 'keyboard-escape-quit)
 (global-set-key (kbd "<f6>") 'other-window)
-(global-set-key (kbd "<f7>") 'switch-to-buffer)
+(global-set-key (kbd "<f7>") 'ibuffer)
 (global-set-key (kbd "<f8>") 'goto-scratch)
-(global-set-key (kbd "<f9>") 'next-error)
-(global-set-key (kbd "<S-f9>") 'previous-error)
+(global-set-key (kbd "<f9>") 'kill-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch

@@ -235,6 +235,12 @@
 (global-set-key "\C-cs" 'mark-symbol)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; revert buffer without query
+(defun my-revert-buffer ()
+	(interactive)
+  (revert-buffer nil t))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; enable disabled command
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)

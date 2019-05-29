@@ -119,7 +119,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(global-undo-tree-mode 1)
+;;(global-undo-tree-mode 1)
 ;;(evil-mode 1)
 (require 'evil-numbers)
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)

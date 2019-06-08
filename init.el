@@ -26,6 +26,8 @@
 (global-set-key (kbd "<f7>") 'ibuffer)
 (global-set-key (kbd "<f8>") 'goto-scratch)
 (global-set-key (kbd "<f9>") 'kill-buffer)
+(global-set-key (kbd "C-TAB") 'next-buffer)
+(global-set-key (kbd "C-S-TAB") 'previous-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch
@@ -95,6 +97,8 @@
 	    (define-key input-decode-map "\e[1;6w" (kbd "C-S-7"))
 	    (define-key input-decode-map "\e[1;6x" (kbd "C-S-8"))
 	    (define-key input-decode-map "\e[1;6y" (kbd "C-S-9"))
+	    (define-key input-decode-map "\e[1;5I" (kbd "C-TAB"))
+	    (define-key input-decode-map "\e[1;6I" (kbd "C-S-TAB"))
 	    )))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

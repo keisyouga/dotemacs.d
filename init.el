@@ -28,6 +28,7 @@
 (global-set-key (kbd "<f9>") 'kill-buffer)
 (global-set-key (kbd "C-TAB") 'next-buffer)
 (global-set-key (kbd "C-S-TAB") 'previous-buffer)
+(global-set-key (kbd "C-C c") 'comment-region)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch

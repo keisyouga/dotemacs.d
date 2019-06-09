@@ -100,6 +100,10 @@
 	    (define-key input-decode-map "\e[1;6y" (kbd "C-S-9"))
 	    (define-key input-decode-map "\e[1;5I" (kbd "C-TAB"))
 	    (define-key input-decode-map "\e[1;6I" (kbd "C-S-TAB"))
+	    (define-key input-decode-map "\e[1;5P" (kbd "<C-f1>"))
+	    (define-key input-decode-map "\e[1;5Q" (kbd "<C-f2>"))
+	    (define-key input-decode-map "\e[1;5R" (kbd "<C-f3>"))
+	    (define-key input-decode-map "\e[1;5S" (kbd "<C-f4>"))
 	    )))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

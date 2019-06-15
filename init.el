@@ -44,10 +44,10 @@
   "show current minibuffer history in buffer `*minibuffer history*'."
   (interactive)
   (let ((buffer (get-buffer-create "*minibuffer history*")))
-	(with-current-buffer buffer
-	  (erase-buffer)
-	  (mapc (lambda (x) (insert (format "%s\n" x))) (symbol-value minibuffer-history-variable)))
-	(display-buffer buffer)))
+    (with-current-buffer buffer
+      (erase-buffer)
+      (mapc (lambda (x) (insert (format "%s\n" x))) (symbol-value minibuffer-history-variable)))
+    (display-buffer buffer)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mouse
@@ -61,50 +61,50 @@
 ;;; fix some keymap that not working properly in tmux
 (if (and (getenv "TMUX") (not window-system))
     (setq tty-setup-hook
-	  (lambda ()
-	    (define-key input-decode-map "\eOM" (kbd "<kp-enter>"))
-	    (define-key input-decode-map "\eO2M" (kbd "<S-kp-enter>"))
-	    (define-key input-decode-map "\eO3M" (kbd "<M-kp-enter>"))
-	    (define-key input-decode-map "\eO4M" (kbd "<M-S-kp-enter>"))
-	    (define-key input-decode-map "\e[1;5l" (kbd "C-,"))
-	    (define-key input-decode-map "\e[1;5n" (kbd "C-."))
-	    (define-key input-decode-map "\e[1;6l" (kbd "C-<"))
-	    (define-key input-decode-map "\e[1;6n" (kbd "C->"))
-	    (define-key input-decode-map "\e[1;7l" (kbd "M-C-,"))
-	    (define-key input-decode-map "\e[1;7n" (kbd "M-C-."))
-	    (define-key input-decode-map "\e[1;8l" (kbd "M-C-<"))
-	    (define-key input-decode-map "\e[1;8n" (kbd "M-C->"))
-	    (define-key input-decode-map "\e[1;5k" (kbd "C-;"))
-	    (define-key input-decode-map "\e[1;6k" (kbd "C-:"))
-	    (define-key input-decode-map "\e[1;5m" (kbd "C--"))
-	    (define-key input-decode-map "\e[1;5p" (kbd "C-0"))
-	    (define-key input-decode-map "\e[1;5q" (kbd "C-1"))
-	    (define-key input-decode-map "\e[1;5r" (kbd "C-2"))
-	    (define-key input-decode-map "\e[1;5s" (kbd "C-3"))
-	    (define-key input-decode-map "\e[1;5t" (kbd "C-4"))
-	    (define-key input-decode-map "\e[1;5u" (kbd "C-5"))
-	    (define-key input-decode-map "\e[1;5v" (kbd "C-6"))
-	    (define-key input-decode-map "\e[1;5w" (kbd "C-7"))
-	    (define-key input-decode-map "\e[1;5x" (kbd "C-8"))
-	    (define-key input-decode-map "\e[1;5y" (kbd "C-9"))
-	    (define-key input-decode-map "\e[1;6m" (kbd "C-S--"))
-	    (define-key input-decode-map "\e[1;6p" (kbd "C-S-0"))
-	    (define-key input-decode-map "\e[1;6q" (kbd "C-S-1"))
-	    (define-key input-decode-map "\e[1;6r" (kbd "C-S-2"))
-	    (define-key input-decode-map "\e[1;6s" (kbd "C-S-3"))
-	    (define-key input-decode-map "\e[1;6t" (kbd "C-S-4"))
-	    (define-key input-decode-map "\e[1;6u" (kbd "C-S-5"))
-	    (define-key input-decode-map "\e[1;6v" (kbd "C-S-6"))
-	    (define-key input-decode-map "\e[1;6w" (kbd "C-S-7"))
-	    (define-key input-decode-map "\e[1;6x" (kbd "C-S-8"))
-	    (define-key input-decode-map "\e[1;6y" (kbd "C-S-9"))
-	    (define-key input-decode-map "\e[1;5I" (kbd "C-TAB"))
-	    (define-key input-decode-map "\e[1;6I" (kbd "C-S-TAB"))
-	    (define-key input-decode-map "\e[1;5P" (kbd "<C-f1>"))
-	    (define-key input-decode-map "\e[1;5Q" (kbd "<C-f2>"))
-	    (define-key input-decode-map "\e[1;5R" (kbd "<C-f3>"))
-	    (define-key input-decode-map "\e[1;5S" (kbd "<C-f4>"))
-	    )))
+          (lambda ()
+            (define-key input-decode-map "\eOM" (kbd "<kp-enter>"))
+            (define-key input-decode-map "\eO2M" (kbd "<S-kp-enter>"))
+            (define-key input-decode-map "\eO3M" (kbd "<M-kp-enter>"))
+            (define-key input-decode-map "\eO4M" (kbd "<M-S-kp-enter>"))
+            (define-key input-decode-map "\e[1;5l" (kbd "C-,"))
+            (define-key input-decode-map "\e[1;5n" (kbd "C-."))
+            (define-key input-decode-map "\e[1;6l" (kbd "C-<"))
+            (define-key input-decode-map "\e[1;6n" (kbd "C->"))
+            (define-key input-decode-map "\e[1;7l" (kbd "M-C-,"))
+            (define-key input-decode-map "\e[1;7n" (kbd "M-C-."))
+            (define-key input-decode-map "\e[1;8l" (kbd "M-C-<"))
+            (define-key input-decode-map "\e[1;8n" (kbd "M-C->"))
+            (define-key input-decode-map "\e[1;5k" (kbd "C-;"))
+            (define-key input-decode-map "\e[1;6k" (kbd "C-:"))
+            (define-key input-decode-map "\e[1;5m" (kbd "C--"))
+            (define-key input-decode-map "\e[1;5p" (kbd "C-0"))
+            (define-key input-decode-map "\e[1;5q" (kbd "C-1"))
+            (define-key input-decode-map "\e[1;5r" (kbd "C-2"))
+            (define-key input-decode-map "\e[1;5s" (kbd "C-3"))
+            (define-key input-decode-map "\e[1;5t" (kbd "C-4"))
+            (define-key input-decode-map "\e[1;5u" (kbd "C-5"))
+            (define-key input-decode-map "\e[1;5v" (kbd "C-6"))
+            (define-key input-decode-map "\e[1;5w" (kbd "C-7"))
+            (define-key input-decode-map "\e[1;5x" (kbd "C-8"))
+            (define-key input-decode-map "\e[1;5y" (kbd "C-9"))
+            (define-key input-decode-map "\e[1;6m" (kbd "C-S--"))
+            (define-key input-decode-map "\e[1;6p" (kbd "C-S-0"))
+            (define-key input-decode-map "\e[1;6q" (kbd "C-S-1"))
+            (define-key input-decode-map "\e[1;6r" (kbd "C-S-2"))
+            (define-key input-decode-map "\e[1;6s" (kbd "C-S-3"))
+            (define-key input-decode-map "\e[1;6t" (kbd "C-S-4"))
+            (define-key input-decode-map "\e[1;6u" (kbd "C-S-5"))
+            (define-key input-decode-map "\e[1;6v" (kbd "C-S-6"))
+            (define-key input-decode-map "\e[1;6w" (kbd "C-S-7"))
+            (define-key input-decode-map "\e[1;6x" (kbd "C-S-8"))
+            (define-key input-decode-map "\e[1;6y" (kbd "C-S-9"))
+            (define-key input-decode-map "\e[1;5I" (kbd "C-TAB"))
+            (define-key input-decode-map "\e[1;6I" (kbd "C-S-TAB"))
+            (define-key input-decode-map "\e[1;5P" (kbd "<C-f1>"))
+            (define-key input-decode-map "\e[1;5Q" (kbd "<C-f2>"))
+            (define-key input-decode-map "\e[1;5R" (kbd "<C-f3>"))
+            (define-key input-decode-map "\e[1;5S" (kbd "<C-f4>"))
+            )))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; buffer selection
@@ -136,8 +136,8 @@
 
 ;; https://www.emacswiki.org/emacs/IndentingC
 (setq-default c-basic-offset 4
-	      tab-width 4
-	      indent-tabs-mode t)
+              tab-width 4
+              indent-tabs-mode t)
 
 ;;(global-whitespace-mode 1)
 ;;(setq next-line-add-newlines t)
@@ -160,35 +160,41 @@
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; cc-mode
+;;; program mode
 (setq c-default-style '((java-mode . "java")
-			(awk-mode . "awk")
-			(other . "linux")))
+                        (awk-mode . "awk")
+                        (other . "linux")))
 
 (defun my-c-mode-common-hook ()
   (setq show-trailing-whitespace t))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
+(defun my-lisp-mode-hook ()
+  (setq indent-tabs-mode nil))
+(add-hook 'lisp-mode-hook 'my-lisp-mode-hook)
+(add-hook 'emacs-lisp-mode-hook 'my-lisp-mode-hook)
+(add-hook 'scheme-mode-hook 'my-lisp-mode-hook)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; dired-x
 (add-hook 'dired-load-hook
-	  (lambda ()
-	    (load "dired-x")
-	    ;; Set dired-x global variables here.  For example:
-	    ;; (setq dired-guess-shell-gnutar "gtar")
-	    ;; (setq dired-x-hands-off-my-keys nil)
-	    (advice-add 'dired-next-line :after #'dired-head-file-function)
-	    ;;(advice-remove 'dired-next-line #'dired-head-file-function)
-	    (define-key dired-mode-map "b" 'dired-toggle-head-file)
-	    ))
+          (lambda ()
+            (load "dired-x")
+            ;; Set dired-x global variables here.  For example:
+            ;; (setq dired-guess-shell-gnutar "gtar")
+            ;; (setq dired-x-hands-off-my-keys nil)
+            (advice-add 'dired-next-line :after #'dired-head-file-function)
+            ;;(advice-remove 'dired-next-line #'dired-head-file-function)
+            (define-key dired-mode-map "b" 'dired-toggle-head-file)
+            ))
 (add-hook 'dired-mode-hook
-	  (lambda ()
-	    ;; Set dired-x buffer-local variables here.  For example:
-	    ;; (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$")
-	    (setq dired-omit-files "^\\.")
-	    ;; (dired-omit-mode 1)
-	    (setq dired-dwim-target t)
-	    ))
+          (lambda ()
+            ;; Set dired-x buffer-local variables here.  For example:
+            ;; (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$")
+            (setq dired-omit-files "^\\.")
+            ;; (dired-omit-mode 1)
+            (setq dired-dwim-target t)
+            ))
 
 ;; display head of file
 (defvar dired-head-file nil
@@ -201,27 +207,27 @@
   "display head of file."
   (if dired-head-file
       (let ((filename (dired-get-filename))
-	    (buffer (get-buffer-create "*head*")))
-	(with-current-buffer buffer
-	  (setq buffer-read-only nil)
-	  (erase-buffer)
-	  (if (file-directory-p filename)
-	      ;; list directory
-	      (insert-directory filename "-a" nil t)
-	    ;; insert head of file content if file size is greater than 0
-	    (if (< 0 (nth 7 (file-attributes filename)))
-		(insert-file-contents filename nil 0 dired-head-file-byte)))
-	  (goto-char (point-min))
-	  (view-mode)
-	  (display-buffer buffer)
-	  ))))
+            (buffer (get-buffer-create "*head*")))
+        (with-current-buffer buffer
+          (setq buffer-read-only nil)
+          (erase-buffer)
+          (if (file-directory-p filename)
+              ;; list directory
+              (insert-directory filename "-a" nil t)
+            ;; insert head of file content if file size is greater than 0
+            (if (< 0 (nth 7 (file-attributes filename)))
+                (insert-file-contents filename nil 0 dired-head-file-byte)))
+          (goto-char (point-min))
+          (view-mode)
+          (display-buffer buffer)
+          ))))
 
 (defun dired-toggle-head-file (&optional arg)
   (interactive "P")
   (setq dired-head-file
-	(if (null arg)
-	    (not dired-head-file)
-	  (> (prefix-numeric-value arg) 0)))
+        (if (null arg)
+            (not dired-head-file)
+          (> (prefix-numeric-value arg) 0)))
   (if dired-head-file
       (dired-head-file-function)
     (quit-windows-on "*head*")))
@@ -232,9 +238,9 @@
   (interactive)
   (require 'pinyin)
   (let ((lst (pinyin
-	      (string-to-char (buffer-substring-no-properties
-			       (point) (1+ (point))))
-	      'TONE3)))
+              (string-to-char (buffer-substring-no-properties
+                               (point) (1+ (point))))
+              'TONE3)))
     (when lst (message "%s" lst))))
 
 (define-minor-mode echo-pinyin-mode
@@ -270,7 +276,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; revert buffer without query
 (defun my-revert-buffer ()
-	(interactive)
+  (interactive)
   (revert-buffer nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

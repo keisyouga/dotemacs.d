@@ -159,6 +159,16 @@
 (global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
+;; smart-tabs-mode
+;;(smart-tabs-insinuate 'c 'c++ 'java 'javascript 'cperl 'python 'ruby 'nxml)
+(smart-tabs-add-language-support perl perl-mode-hook
+  ((perl-indent-line . perl-indent-level)))
+(smart-tabs-add-language-support javascript js-mode-hook
+  ((js-indent-line . js-indent-level)))
+(smart-tabs-add-language-support sgml sgml-mode-hook
+  ((sgml-indent-line . sgml-basic-offset)))
+(smart-tabs-insinuate 'c 'c++ 'javascript 'perl 'sgml)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; program mode
 (setq c-default-style '((java-mode . "java")

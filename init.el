@@ -112,6 +112,9 @@
 ;;(ido-mode t)
 ;;(icomplete-mode)
 (setq read-buffer-completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+;; in minibuffer, press TAB to cygling completion.
+;; if you wish to list candidates, press "?".
 (setq completion-cycle-threshold t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

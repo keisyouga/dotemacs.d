@@ -26,8 +26,8 @@
 (global-set-key (kbd "<f7>") 'ibuffer)
 (global-set-key (kbd "<f8>") 'goto-scratch)
 (global-set-key (kbd "<f9>") 'kill-buffer)
-(global-set-key (kbd "C-TAB") 'next-buffer)
-(global-set-key (kbd "C-S-TAB") 'previous-buffer)
+(global-set-key (kbd "<C-tab>") 'next-buffer)
+(global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-C c") 'comment-region)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -98,8 +98,8 @@
             (define-key input-decode-map "\e[1;6w" (kbd "C-S-7"))
             (define-key input-decode-map "\e[1;6x" (kbd "C-S-8"))
             (define-key input-decode-map "\e[1;6y" (kbd "C-S-9"))
-            (define-key input-decode-map "\e[1;5I" (kbd "C-TAB"))
-            (define-key input-decode-map "\e[1;6I" (kbd "C-S-TAB"))
+            (define-key input-decode-map "\e[1;5I" (kbd "<C-tab>"))
+            (define-key input-decode-map "\e[1;6I" (kbd "<C-S-tab>"))
             (define-key input-decode-map "\e[1;5P" (kbd "<C-f1>"))
             (define-key input-decode-map "\e[1;5Q" (kbd "<C-f2>"))
             (define-key input-decode-map "\e[1;5R" (kbd "<C-f3>"))

@@ -116,12 +116,12 @@ Return the pasted text as a string."
 
 (defun xterm-translate-focus-in (_prompt)
   (setf (terminal-parameter nil 'tty-focus-state) 'focused)
-  (funcall after-focus-change-function)
+  ;; (funcall after-focus-change-function)
   [])
 
 (defun xterm-translate-focus-out (_prompt)
   (setf (terminal-parameter nil 'tty-focus-state) 'defocused)
-  (funcall after-focus-change-function)
+  ;; (funcall after-focus-change-function)
   [])
 
 (defun xterm--suspend-tty-function (_tty)

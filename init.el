@@ -137,6 +137,7 @@
 (setq compilation-window-height 10)
 (setq delete-active-region nil)
 (setq vc-follow-symlinks t)
+(ffap-bindings)
 
 ;; https://www.emacswiki.org/emacs/IndentingC
 (setq-default c-basic-offset 4

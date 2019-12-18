@@ -279,6 +279,13 @@
 (yas-global-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; slime
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
+;; default http://www.lispworks.com/reference/HyperSpec/
+(setq common-lisp-hyperspec-root (concat "file://" (getenv "HOME") "/doc/HyperSpec/"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mark symbol
 (defun mark-symbol ()
   (interactive)

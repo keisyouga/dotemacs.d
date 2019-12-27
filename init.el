@@ -281,7 +281,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; slime
 (setq inferior-lisp-program "sbcl")
-(setq slime-contribs '(slime-fancy))
+;;(setq slime-contribs '(slime-fancy))
+(setq slime-contribs '(slime-repl))
 ;; default http://www.lispworks.com/reference/HyperSpec/
 (setq common-lisp-hyperspec-root (concat "file://" (getenv "HOME") "/doc/HyperSpec/"))
 

@@ -175,6 +175,30 @@
 (smart-tabs-insinuate 'c 'c++ 'javascript 'perl 'sgml)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; whitespace mode
+(require 'whitespace)
+
+;; remove unwanted visualization
+(dolist (d '(lines indentation space-after-tab))
+  (setq whitespace-style (delq d whitespace-style)))
+
+;; full-width space
+;;(setq whitespace-space-regexp "\\(\u3000+\\)")
+
+;; display ascii only in non-utf8 environment, where can not display correctly
+(let ((lang (getenv "LANG")))
+  (if (and (stringp lang) (string-match "UTF-8" lang))
+      (setq whitespace-display-mappings
+            '((newline-mark ?\n    [?$,1w5(B ?\n] [?$ ?\n])
+              (tab-mark     ?\t    [?$(Q)2(B ?\t] [?\\ ?\t])))
+    (setq whitespace-display-mappings
+          '((newline-mark ?\n [?$ ?\n])
+            (tab-mark     ?\t [?\\ ?\t])))
+    ))
+
+(global-whitespace-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; program mode
 (setq c-default-style '((java-mode . "java")
                         (awk-mode . "awk")

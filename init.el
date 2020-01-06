@@ -137,7 +137,10 @@
 (setq compilation-window-height 10)
 (setq delete-active-region nil)
 (setq vc-follow-symlinks t)
+;; find-file-at-point
 (ffap-bindings)
+;; use default find-alternate-file rather than ffap-alternate-filea
+(global-set-key "\C-x\C-v" 'find-alternate-file)
 
 ;; https://www.emacswiki.org/emacs/IndentingC
 (setq-default c-basic-offset 4

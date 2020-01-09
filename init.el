@@ -30,6 +30,7 @@
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
 (global-set-key (kbd "C-C c") 'comment-region)
 (global-set-key (kbd "C-z") (lambda () (interactive) (message "instead of C-z, use C-x C-z to suspend")))
+(global-unset-key (kbd "C-\\"))         ; toggle-input-method
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch

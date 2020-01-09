@@ -22,7 +22,7 @@
 ;; (define-key isearch-mode-map (kbd "<S-f3>") 'isearch-repeat-backward)
 ;; (define-key minibuffer-local-isearch-map (kbd "<S-f3>") 'isearch-reverse-exit-minibuffer)
 (global-set-key (kbd "<f5>") 'keyboard-escape-quit)
-(global-set-key (kbd "<f6>") 'other-window)
+(global-set-key (kbd "<f6>") 'switch-to-buffer)
 (global-set-key (kbd "<f7>") 'ibuffer)
 (global-set-key (kbd "<f8>") 'goto-scratch)
 (global-set-key (kbd "<f9>") 'kill-buffer)

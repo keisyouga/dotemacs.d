@@ -140,6 +140,7 @@
 ;;     (global-linum-mode 1)))
 (column-number-mode 1)
 (show-paren-mode 1)
+(electric-pair-mode 1)                  ; auto pairing (), "", [], ...
 (setq view-read-only t)
 ;; don't ask to save each modified files before grep, don't save
 (setq grep-save-buffers nil)

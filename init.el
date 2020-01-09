@@ -141,8 +141,10 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (setq view-read-only t)
+;; don't ask to save each modified files before grep, don't save
 (setq grep-save-buffers nil)
 (setq compilation-window-height 10)
+;; don't delete region when type DEL, BS
 (setq delete-active-region nil)
 (setq vc-follow-symlinks t)
 ;; find-file-at-point

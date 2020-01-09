@@ -148,7 +148,6 @@
               tab-width 4
               indent-tabs-mode t)
 
-;;(global-whitespace-mode 1)
 ;;(setq next-line-add-newlines t)
 ;;(setq viper-mode t)
 ;;(require 'viper)

@@ -42,6 +42,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch
 (defun goto-scratch (&optional pop)
+  "Go to *scratch* buffer.
+if POP, ‘pop-to-buffer’, otherwise ‘switch-to-buffer’."
   (interactive "P")
   (if pop
       (pop-to-buffer "*scratch*")
@@ -50,7 +52,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; show minibuffer history
 (defun show-minibuffer-history ()
-  "show current minibuffer history in buffer `*minibuffer history*'."
+  "Show current minibuffer history in buffer `*minibuffer history*'."
   (interactive)
   (let ((buffer (get-buffer-create "*minibuffer history*")))
     (with-current-buffer buffer
@@ -218,10 +220,12 @@
                         (other . "linux")))
 
 (defun my-c-mode-common-hook ()
+  "Hook used for ‘c-mode-common-hook’."
   (setq show-trailing-whitespace t))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (defun my-lisp-mode-hook ()
+  "Hook used for lisp-like mode."
   (setq indent-tabs-mode nil))
 (add-hook 'lisp-mode-hook 'my-lisp-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'my-lisp-mode-hook)
@@ -250,13 +254,14 @@
 
 ;; display head of file
 (defvar dired-head-file nil
-  "used by `dired-head-file-function'")
+  "Used by `dired-head-file-function'.")
 
 (defvar dired-head-file-byte 1024
-  "byte size of file that display for.")
+  "Byte size of file that display for.")
 
 (defun dired-head-file-function (&rest args)
-  "display head of file."
+  "Display head of file.
+Optional argument ARGS toggle."
   (if dired-head-file
       (let ((filename (dired-get-filename))
             (buffer (get-buffer-create "*head*")))
@@ -275,6 +280,8 @@
           ))))
 
 (defun dired-toggle-head-file (&optional arg)
+  "Toggle display *head*.
+if prefix ARG, set `dired-head-file' to t."
   (interactive "P")
   (setq dired-head-file
         (if (null arg)
@@ -287,6 +294,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; echo pinyin
 (defun echo-pinyin-point ()
+  "Print pinyin at point.  `pinyin' is required."
   (interactive)
   (require 'pinyin)
   (let ((lst (pinyin
@@ -326,6 +334,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; mark symbol
 (defun mark-symbol ()
+  "Mark symbol near point.  like `isearch-forward-symbol-at-point'."
   (interactive)
   (let ((bounds (find-tag-default-bounds)))
     (when bounds
@@ -336,6 +345,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; revert buffer without query
 (defun my-revert-buffer ()
+  "`revert-buffer' without confirmation."
   (interactive)
   (revert-buffer nil t))
 

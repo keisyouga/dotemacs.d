@@ -31,14 +31,12 @@
 (global-set-key (kbd "C-c c") 'comment-region)
 (global-set-key (kbd "C-z") (lambda () (interactive) (message "instead of C-z, use C-x C-z to suspend")))
 (global-unset-key (kbd "C-\\"))         ; toggle-input-method
-;; select window with M-{left,right,up,down}
-(windmove-default-keybindings 'meta)
-(add-hook 'org-load-hook
-          (lambda ()
-            (define-key org-mode-map [(meta up)] nil)
-            (define-key org-mode-map [(meta down)] nil)
-            (define-key org-mode-map [(meta left)] nil)
-            (define-key org-mode-map [(meta right)] nil)))
+;; vim-like window selection
+(global-set-key (kbd "C-c h") 'windmove-left)
+(global-set-key (kbd "C-c j") 'windmove-down)
+(global-set-key (kbd "C-c k") 'windmove-up)
+(global-set-key (kbd "C-c l") 'windmove-right)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch
 (defun goto-scratch (&optional pop)

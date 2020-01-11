@@ -28,7 +28,7 @@
 (global-set-key (kbd "<f9>") 'kill-buffer)
 (global-set-key (kbd "<C-tab>") 'next-buffer)
 (global-set-key (kbd "<C-S-tab>") 'previous-buffer)
-(global-set-key (kbd "C-C c") 'comment-region)
+(global-set-key (kbd "C-c c") 'comment-region)
 (global-set-key (kbd "C-z") (lambda () (interactive) (message "instead of C-z, use C-x C-z to suspend")))
 (global-unset-key (kbd "C-\\"))         ; toggle-input-method
 ;; select window with M-{left,right,up,down}

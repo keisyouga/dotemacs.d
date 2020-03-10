@@ -263,7 +263,7 @@ if POP, $B!F(Bpop-to-buffer$B!G(B, otherwise $B!F(Bswitch-to-buffer$B!G(
                    (list "\\.pl$" "perl")
                    (list "\\.py$" "python")
                    (list "\\.lua$" "lua")
-                   (list "\\.tcl$" "wish")
+                   (list "\\.tcl$" "tclsh" "wish")
                    ))
             ))
 

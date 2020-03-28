@@ -38,6 +38,14 @@
 (global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c o") 'other-window)
 
+(global-set-key (kbd "C-c p <") 'insert-pair)
+(global-set-key (kbd "C-c p \"") 'insert-pair)
+(global-set-key (kbd "C-c p '") 'insert-pair)
+(global-set-key (kbd "C-c p `") 'insert-pair)
+(global-set-key (kbd "C-c p (") 'insert-pair)
+(global-set-key (kbd "C-c p [") 'insert-pair)
+(global-set-key (kbd "C-c p {") 'insert-pair)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch
 (defun goto-scratch (&optional pop)

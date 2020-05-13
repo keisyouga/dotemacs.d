@@ -327,23 +327,25 @@ if prefix ARG, set `dired-head-file' to t."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; echo pinyin
-(defun echo-pinyin-point ()
-  "Print pinyin at point.  `pinyin' is required."
-  (interactive)
-  (require 'pinyin)
-  (let ((lst (pinyin
-              (string-to-char (buffer-substring-no-properties
-                               (point) (1+ (point))))
-              'TONE3)))
-    (when lst (message "%s" lst))))
+(require 'pinyin nil t)
+(when (featurep 'pinyin)
+  (defun echo-pinyin-point ()
+    "Print pinyiqn at point.  `pinyin' is required."
+    (interactive)
+    (let ((lst (pinyin
+                (string-to-char (buffer-substring-no-properties
+                                 (point) (1+ (point))))
+                'TONE3)))
+      (when lst (message "%s" lst))))
 
-(define-minor-mode echo-pinyin-mode
-  "Toggle echo area display of pinyin at cursor position's hanzi."
-  :init-value nil
-  :lighter " Echo-Pinyin"
-  (if echo-pinyin-mode
-      (add-hook 'post-command-hook #'echo-pinyin-point nil t)
-    (remove-hook 'post-command-hook #'echo-pinyin-point t)))
+  (define-minor-mode echo-pinyin-mode
+    "Toggle echo area display of pinyin at cursor position's hanzi."
+    :init-value nil
+    :lighter " Echo-Pinyin"
+    (if echo-pinyin-mode
+        (add-hook 'post-command-hook #'echo-pinyin-point nil t)
+      (remove-hook 'post-command-hook #'echo-pinyin-point t)))
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; auto-complete

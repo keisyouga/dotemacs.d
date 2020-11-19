@@ -46,6 +46,8 @@
 (global-set-key (kbd "C-c p [") 'insert-pair)
 (global-set-key (kbd "C-c p {") 'insert-pair)
 
+;; ESC C-v is scroll-other-window
+(global-set-key (kbd "ESC M-v") 'scroll-other-window-down)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; goto scratch
 (defun goto-scratch (&optional pop)

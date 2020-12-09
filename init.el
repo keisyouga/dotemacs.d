@@ -419,6 +419,13 @@ if prefix ARG, set `dired-head-file' to t."
   (revert-buffer nil t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; maxima mode
+(autoload 'maxima-mode "maxima" "Maxima mode" t)
+(autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
+(autoload 'maxima "maxima" "Maxima interaction" t)
+(autoload 'imath-mode "imath" "Imath mode for math formula input" t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; enable disabled command
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
